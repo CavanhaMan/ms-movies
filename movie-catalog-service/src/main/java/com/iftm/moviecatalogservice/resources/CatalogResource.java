@@ -16,5 +16,6 @@ public class CatalogResource {
     public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
         //return Collections.singletonList(new CatalogItem("Test", "Test Desc", 4));
         return Collections.singletonList(new CatalogItem("Transformers", "Filme de Robo", 4));
+        //esse retorno foi criado para ele retornar algo "a força" sendo que ainda não temos dados
     }
 }
