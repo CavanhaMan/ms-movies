@@ -11,3 +11,4 @@ public class MovieCatalogServiceApplication {
 	}
 
 }
+//localhost:8080
