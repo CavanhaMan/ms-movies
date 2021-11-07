@@ -11,6 +11,8 @@ public class Rating {
         this.rating = rating;
     }
 
+	public Rating() {super();}
+
 	//aqui temos os métodos para pegar(get) e setar(set) informacoes
     public String getMovieId() {return movieId;}
     public void setMovieId(String movieId) {this.movieId = movieId;}

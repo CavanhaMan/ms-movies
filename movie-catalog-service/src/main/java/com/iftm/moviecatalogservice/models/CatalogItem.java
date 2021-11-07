@@ -14,6 +14,8 @@ public class CatalogItem {
 		this.rating = rating;
 	}
 
+	public CatalogItem() {super();}
+
 	//aqui temos os métodos para pegar(get) e setar(set) informacoes
 	public String getName() {return name;}
 	public void setName(String name) {this.name = name;}

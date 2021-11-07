@@ -1,6 +1,5 @@
 package com.iftm.moviecatalogservice.resources;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import com.iftm.moviecatalogservice.models.CatalogItem;
 import com.iftm.moviecatalogservice.models.Movie;
 import com.iftm.moviecatalogservice.models.Rating;
+import com.iftm.moviecatalogservice.models.UserRating;
 
 
 @RestController
@@ -42,24 +42,18 @@ public class CatalogResource {
     	//essa função será movida para dentro do retorno para enfim trazer um retorno real
     	//fazendo com que o micro service funcione de verdade
     	
-    	List<Rating> ratings = Arrays.asList(
-    		new Rating("1234",4),//fake data para testar
-    		new Rating("4567",3)//traz um ID e uma avaliação
-    	);
+    	UserRating ratings = restTemplate.getForObject("http://localhost:8083/ratingsdata/users/" + userId, UserRating.class);
     	
-    	return ratings.stream().map(rating -> {
+    	return ratings.getUserRating().stream().map(rating -> {
+        	//2) Para cada movid ID, chamar movie info service e get details:
     		Movie movie = restTemplate.getForObject("http://localhost:8082/movies/" + rating.getMovieId(), Movie.class);
     		//como dito acima, esta linha vai agora pegar cada avaliação de cada filme (atraves do getMovidId)
     		//new CatalogItem("Transformers", "Filme de Robooo", 4))
     		//agora eu removo o retorno falso para buscar algo real:
+        	//3) Colocar tudo junto
     		return new CatalogItem(movie.getName(), "Description", rating.getRating());
         })
         .collect(Collectors.toList());
-    			
-    	//2) Para cada movid ID, chamar movie info service e get details
-    	
-    	
-    	//3) Colocar tudo junto
     	
         //return Collections.singletonList(new CatalogItem("Transformers", "Filme de Robo", 4));
     }
