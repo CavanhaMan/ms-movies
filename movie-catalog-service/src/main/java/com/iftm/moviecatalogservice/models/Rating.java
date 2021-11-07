@@ -1,11 +1,9 @@
-package com.iftm.ratingsdataservice.model;
+package com.iftm.moviecatalogservice.models;
 
 public class Rating {
 
     private String movieId;
     private int rating;
-
-    public Rating() {super();}
 
 	//aqui indica como essa classe poderá ser acessada:
     public Rating(String movieId, int rating) {

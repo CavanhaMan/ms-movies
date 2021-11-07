@@ -1,4 +1,4 @@
-package com.iftm.movieinfoservice.models;
+package com.iftm.moviecatalogservice.models;
 
 public class Movie {
 
@@ -6,6 +6,8 @@ public class Movie {
 	private String name;
 	
 	public Movie() {super();}
+	//para mesclar algo que não é um objeto com um objeto, é preciso ter um construtor vazio!
+	//ele constroi um objeto vazio e vai populando com os elementos encontrados, um a um
 
 	//aqui indica como essa classe poderá ser acessada:
 	public Movie(String movieId, String name) {
