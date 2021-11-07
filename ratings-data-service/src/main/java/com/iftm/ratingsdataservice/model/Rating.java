@@ -5,15 +5,14 @@ public class Rating {
     private String movieId;
     private int rating;
 
-    public Rating() {super();}
 
-	//aqui indica como essa classe poderá ser acessada:
     public Rating(String movieId, int rating) {
         this.movieId = movieId;
         this.rating = rating;
     }
 
-	//aqui temos os métodos para pegar(get) e setar(set) informacoes
+    public Rating() {super();}
+
     public String getMovieId() {return movieId;}
     public void setMovieId(String movieId) {this.movieId = movieId;}
     public int getRating() {return rating;}
