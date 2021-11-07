@@ -19,3 +19,6 @@ public class CatalogResource {
         //esse retorno foi criado para ele retornar algo "a força" sendo que ainda não temos dados
     }
 }
+//A montagem do teste para esta clase será usando o /catalog e o userId
+//Ou seja, no POSTMAN, inserir a chamada:
+//http://localhost:8082/catalog/foo

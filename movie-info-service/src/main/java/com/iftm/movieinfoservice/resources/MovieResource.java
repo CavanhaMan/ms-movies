@@ -17,3 +17,6 @@ public class MovieResource {
 	}
 	
 }
+//A montagem do teste para esta clase será usando o /catalog e o movieId
+//Ou seja, no POSTMAN, inserir a chamada:
+//http://localhost:8082/movies/foo
