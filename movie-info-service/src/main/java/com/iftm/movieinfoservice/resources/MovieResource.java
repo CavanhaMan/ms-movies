@@ -10,6 +10,7 @@ import com.iftm.movieinfoservice.models.Movie;
 @RequestMapping("/movies")
 public class MovieResource {
 
+	@RequestMapping("/{movieId}")
 	public Movie getMovieInfo(@PathVariable("movieId") String movieId) {
 		return new Movie(movieId, "Test name");
 		//esse retorno foi criado para ele retornar algo "a força" sendo que ainda não temos dados
